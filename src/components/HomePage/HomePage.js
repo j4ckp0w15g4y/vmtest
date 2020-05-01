@@ -7,15 +7,38 @@ class HomePage extends Component {
     constructor() {
         super();
         this.state = {
-
+            title: [],
+            subtitle: [],
+            imageUrl: []
         }
     }
 
-    // componentDidMount() {
+    getInfo() {
+        let url = `https://interview-assessment.api.avamae.co.uk/api/v1/home/banner-details`
+        axios.get(url)
+          .then(response => {
+              const titles = response.data.Details.map((info) => info.Title)
+              const subtitles = response.data.Details.map((info) => info.Subtitle) 
+              const imageUrlArray = response.data.Details.map((info) => info.ImageUrl)           
+            this.setState({
+              title: titles,
+              subtitle: subtitles,
+              imageUrl: imageUrlArray
+            //   subtitle: response.data.Details.Subtitle,
+            //   imageUrl: response.data.Details.ImageUrl
+            });        
+          })
+          .catch((error) => {
+            console.log("Error:", error);
+          });
+      }
 
-    // }
-    
+    componentDidMount() {
+        this.getInfo();        
+    }
+
     render() {
+        console.log(this.state.imageUrl)
         return (
             <div>
                 <div className="carousel">
