@@ -4,7 +4,7 @@ class SubmitContact extends Component {
     render() {
         return (
             <div>
-                
+                HELLO
             </div>
         );
     }

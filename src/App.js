@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Link } from "react-router-dom";
-import HomePage from './components/HomePage/HomePage'
-import AboutPage from './components/AboutPage/AboutPage'
-import SubmitContact from './components/SubmitContact/SubmitContact'
+import Header from './components/Header/Header';
+import HomePage from './components/HomePage/HomePage';
+import AboutPage from './components/AboutPage/AboutPage';
+import SubmitContact from './components/SubmitContact/SubmitContact';
+import Footer from './components/Footer/Footer';
 
 
 
@@ -12,9 +14,8 @@ class App extends Component {
     return (
       <div>
         <nav>
-          <Link>Home</Link>
-          <Link>About Us</Link>
-          <Link>Contact Us</Link>
+
+          <Header />
         </nav>
         <main>
           <Route exact path="/" component={HomePage} />
@@ -23,7 +24,7 @@ class App extends Component {
 
         </main>
         <footer>
-
+          <Footer />
         </footer>
       </div>
     );
