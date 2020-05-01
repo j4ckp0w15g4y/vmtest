@@ -1,7 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios'
+
 
 class HomePage extends Component {
+    constructor() {
+        super();
+        this.state = {
+
+        }
+    }
+
+    // componentDidMount() {
+
+    // }
+    
     render() {
         return (
             <div>
